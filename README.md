@@ -69,12 +69,16 @@ $ make CROSS_COMPILE=/path/to/gcc/bin/aarch64-none-elf-
 ``
 
 *NOTE*  
-Alternatively you can use my prebuilt binaries (U-Boot v2020.07):
+Alternatively you can use my prebuilt binaries:
 
-[Rock64](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rock64/v2020.07)  
-[RockPro64 (not tested)](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rockpro64/v2020.07)  
+[Rock64 (U-Boot v2020.07)](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rock64/v2020.07)  
+[RockPro64 (U-Boot v2020.07 - not tested)](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rockpro64/v2020.07)  
 
 ![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-u-boot_v2020.07.png)
+
+[Rock64 (U-Boot v2020.10)](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rock64/v2020.10)  
+
+![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-u-boot_v2020.10.png)
 
 ### Step 3 - Install *miniroot67.fs* on microSD card
 

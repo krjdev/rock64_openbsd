@@ -7,4 +7,4 @@ compiler:
     - gcc
 
 script:
-    - build.sh
+    - sh build.sh

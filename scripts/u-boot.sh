@@ -5,16 +5,16 @@
 # Project  : rock64_openbsd
 # Author   : Copyright (C) 2021 Johannes Krottmayer <krjdev@gmail.com>
 # Created  : 2021-02-02
-# Modified : 
+# Modified : 2021-02-03
 # Revised  : 
-# Version  : 0.1.0.0
+# Version  : 0.1.1.0
 # License  : CC-BY (see file LICENSE.md)
 #
 # NOTE: This code is currently below version 1.0, and therefore is considered
 # to be lacking in some functionality or documentation, or may not be fully
 # tested. Nonetheless, you can expect most functions to work.
 
-SCRIPT_VERSION="0.1.0.0"
+SCRIPT_VERSION="0.1.1.0"
 GCC_AARCH64="aarch64-none-elf"
 UBOOT_GIT="https://github.com/u-boot/u-boot.git"
 UBOOT_DIR="u-boot"
@@ -121,9 +121,41 @@ build_uboot()
     make $UBOOT_ROCK64_CONFIG
     make CROSS_COMPILE=$PWD/../$GCC_AARCH64/bin/aarch64-none-elf-
     ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "$UBOOT_SCRIPT_DESC" -d ../scripts/$UBOOT_SCRIPT_SRC $UBOOT_SCRIPT_BIN
+    
+    if [ ! -f "$UBOOT_ROCK64_IDBLOADER" ]
+    then
+        echo "Error: Build failed for $UBOOT_ROCK64_IDBLOADER."
+        env_cleanup
+        exit 1
+    fi
+    
     cp $UBOOT_ROCK64_IDBLOADER ../$UBOOT_ROCK64_IDBLOADER
+    
+    if [ ! -f "$UBOOT_ROCK64_ITB" ]
+    then
+        echo "Error: Build failed for $UBOOT_ROCK64_ITB"
+        env_cleanup
+        exit 1
+    fi
+    
     cp $UBOOT_ROCK64_ITB ../$UBOOT_ROCK64_ITB
+    
+    if [ ! -f "arch/arm/dts/$UBOOT_ROCK64_DTB" ]
+    then
+        echo "Error: Build failed for arch/arm/dts/$UBOOT_ROCK64_DTB"
+        env_cleanup
+        exit 1
+    fi
+    
     cp arch/arm/dts/$UBOOT_ROCK64_DTB ../$UBOOT_ROCK64_DTB
+    
+    if [ ! -f "$UBOOT_SCRIPT_BIN" ]
+    then
+        echo "Error: Build failed for $UBOOT_SCRIPT_BIN"
+        env_cleanup
+        exit 1
+    fi
+    
     cp $UBOOT_SCRIPT_BIN ../$UBOOT_SCRIPT_BIN
     cd ..
     

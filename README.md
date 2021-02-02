@@ -37,7 +37,7 @@ $ cd rock64_openbsd
 $ sh build.sh
 ```
 
-The required file(s) for this tutorial are placed in the root directory of the repository. The following file should be successfully created:  
+The required file(s) for this tutorial are placed in the root directory of the repository. The following files should be successfully created:  
 
 * **bl31.elf**  
 

@@ -4,6 +4,15 @@
 *.*.kate-swp
 .directory
 
+# GCC for AArch64
+aarch64-none-elf
+
+# ATF sources
+arm-trusted-firmware
+
+# U-Boot sources
+u-boot
+
 # TODO
 TODO
 

@@ -17,17 +17,49 @@
 [Download: Toolchains from ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads)  
 * Device Tree Compiler (required to build U-Boot)
 * Image *miniroot68.img* for ARM64 from the offical OpenBSD FTP mirrors  
-[Download: Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)
+[Download: Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)  
+* U-Boot script for enabling one of the USB ports  
+[Download](https://github.com/krjdev/rock64_openbsd/blob/master/scripts/u-boot_usb.script)  
 
 *NOTE*  
-You can skip **step 1** to **step 2**, if you want to use my build scripts (initial version) for downloading the required toolchains, build ATF, build U-Boot and generate my U-Boot script for enabling the USB-port:
+You can skip **step 1** to **step 2**, if you want to use my build scripts (initial version) for downloading the required toolchains, build ATF, build U-Boot and generate my U-Boot script for enabling the USB-port, or you can use my prebuilt binaries:
 
-Just clone this repository and execute the script:
+[Rock64 (U-Boot v2021.01)](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rock64/U-Boot_v2021.01)  
+
+![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-u-boot_v2021.01.png)
+
+
+To build U-Boot with my scripts:
+
 ```
 $ git clone https://github.com/krjdev/rock64_openbsd.git
 $ cd rock64_openbsd
 $ sh build.sh
 ```
+
+The required file(s) for this tutorial are placed in the root directory of the repository. The following file should be successfully created:  
+
+* **bl31.elf**  
+
+This file is the ARM-Trusted-Firmware. It is embedded in the U-Boot binaries. No longer required for this tutorial.  
+
+* **boot.scr**  
+
+This file ist the U-Boot script binary for enabling one of the USB ports. It's an inital release. Might change on further releases on this tutorial. The reason is, OpenBSD currently doesn't power-on the USB-ports. This script is a workaround as soon as the OpenBSD devlopers fix this isssue.  
+
+* **idbloader.img**  
+
+This is the second stage bootloader. The first stage bootloader is proprietary and resides in the embedded Flash in the used SoC (Rockchip RK3328).  
+
+* **rk3328-rock64.dtb**  
+
+The Device-Tree-Blob. It's the binary version of one or more Device-Tree sources. This file contains information, like embedded interfaces, about the SoC.  
+
+* **u-boot.itb**  
+
+This is the third stage bootloader. U-Boot itself.
+
+
 
 ### Step 1 - Build ATF (ARM Trusted Firmware)
 * Checkout ATF sources  
@@ -63,14 +95,8 @@ $ make CROSS_COMPILE=/path/to/gcc/bin/aarch64-none-elf-
 * Compile U-Boot boot script (required for step 7)
 ```
 $ git clone https://github.com/krjdev/rock64_openbsd.git
-$ ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "Script: Enable USB power supply for OpenBSD" -d /path/to/rock64_openbsd/scripts/u-boot_usb.script boot.scr
+$ ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "Script: Enable USB power supply for OpenBSD" -d /path/to/u-boot_usb.script boot.scr
 ```
-
-*NOTE*  
-Alternatively you can use my prebuilt binaries:  
-[Rock64 (U-Boot v2021.01)](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rock64/U-Boot_v2021.01)  
-
-![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-u-boot_v2021.01.png)
 
 ### Step 3 - Install *miniroot68.img* on microSD card
 

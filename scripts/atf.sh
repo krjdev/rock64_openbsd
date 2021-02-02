@@ -156,4 +156,3 @@ fi
 
 build_atf
 env_cleanup
-exit 0

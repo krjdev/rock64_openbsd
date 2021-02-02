@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#./scripts/toolchain.sh
-source ./scripts/atf.sh
-source ./scripts/u-boot.sh
-#!/bin/bash
-
 # File Name: build.sh
 # Title    : BASH control script for building U-Boot for PINE64 ROCK64
 # Project  : rock64_openbsd
@@ -61,9 +56,9 @@ show_version()
 
 build_all()
 {
-    source $SCRIPT_TOOLCHAIN
-    source $SCRIPT_ATF
-    source $SCRIPT_UBOOT
+    . $SCRIPT_TOOLCHAIN
+    . $SCRIPT_ATF
+    . $SCRIPT_UBOOT
 }
 
 while [ $# -ne 0 ]

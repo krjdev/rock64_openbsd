@@ -129,7 +129,7 @@ build_uboot()
     
     if [ $_SCRIPT_KEEP -ne 1 ]
     then
-        rm -Rf u-boot
+        rm -Rf $UBOOT_DIR
     fi
 }
 
@@ -178,4 +178,3 @@ fi
 
 build_uboot
 env_cleanup
-exit 0

@@ -89,12 +89,5 @@ do
     esac
 done
 
-
-if [ $_SCRIPT_DEFAULT -eq 1 ]
-then
-    _ATF_VERSION=$ATF_VERSION
-fi
-
 download_toolchain
 env_cleanup
-exit 0

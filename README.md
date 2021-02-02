@@ -62,14 +62,14 @@ Alternatively you can use my prebuilt binaries:
 
 ![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-u-boot_v2021.01.png)
 
-### Step 3 - Install *miniroot67.fs* on microSD card
+### Step 3 - Install *miniroot68.img* on microSD card
 
 * Put the microSD card in your PC
 * Open the terminal on your PC
-* Copy *miniroot67.fs* to microSD
+* Copy *miniroot68.img* to microSD
 
 ```
-$ dd if=/path/to/miniroot67.fs of=/dev/sdx bs=1M
+$ dd if=/path/to/miniroot68.img of=/dev/sdx bs=1M
 ```
 
 ### Step 4 - Place *idbloader.img* and *u-boot.itb* on microSD card
@@ -93,10 +93,13 @@ minicom -8 -D /dev/ttyUSB0 -b 1500000
 * Power-On the ROCK64
 * Wait until you see the OpenBSD Installer:
 
-![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-obsd_installer.png)
+![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-obsd68_installer.png)
 
 * Install OpenBSD: Follow the steps of the OpenBSD installer
 * After successfull installation shutdown OpenBSD
+
+![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-obsd68_success.png)
+
 * Power-down the board and remove the microSD card from ROCK64
 
 ### Step 6 - Place *rk3328-rock64.dtb* on microSD card
@@ -136,6 +139,8 @@ $ umount /mnt
 ### Step 8 - Boot OpenBSD
 * Put the microSD card in the ROCK64
 * Power-on ROCK64
+
+![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-obsd68_login.png)
 
 ### Step 9 - Have fun with OpenBSD 6.8
 #### Output (dmesg)

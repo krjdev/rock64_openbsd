@@ -20,7 +20,7 @@
 [Download: Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)
 
 *NOTE*  
-You can skip **step 1** to **step 3**, if you want to use my build scripts (initial version) for downloading the required toolchains, build ATF, build U-Boot and generate my U-Boot script for enabling the USB-port:
+You can skip **step 1** to **step 2**, if you want to use my build scripts (initial version) for downloading the required toolchains, build ATF, build U-Boot and generate my U-Boot script for enabling the USB-port:
 
 Just clone this repository and execute the script:
 ```

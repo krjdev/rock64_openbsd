@@ -19,6 +19,9 @@
 * Image *miniroot68.img* for ARM64 from the offical OpenBSD FTP mirrors  
 [Download: Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)
 
+*NOTE*  
+You can skip **step 1** to **step 3**, if you want to use my build scripts (initial version) for downloading the required toolchains, build ATF, build U-Boot and generate my U-Boot srcipt for enabling the USB-port.
+
 ### Step 1 - Build ATF (ARM Trusted Firmware)
 * Checkout ATF sources  
 ```

@@ -13,10 +13,10 @@
 **Required software**
 
 * UART Terminal (in this tutorial I use minicom)
-* GCC cross compiler for ARM64 (AArch64)
+* GCC cross compiler for ARM64 (AArch64)  
 [Offical Toolchains from ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads)  
 * Device Tree Compiler (required to build U-Boot)
-* Image *miniroot68.img* for ARM64 from the offical OpenBSD FTP mirrors
+* Image *miniroot68.img* for ARM64 from the offical OpenBSD FTP mirrors  
 [Download: Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)
 
 ### Step 1 - Build ATF (ARM Trusted Firmware)
@@ -145,76 +145,76 @@ $ umount /mnt
 ### Step 9 - Have fun with OpenBSD 6.8
 #### Output (dmesg)
 ```
-rock64# dmesg                                                                                                                    
-OpenBSD 6.8 (GENERIC.MP) #828: Sun Oct  4 20:35:47 MDT 2020                                                                      
-    deraadt@arm64.openbsd.org:/usr/src/sys/arch/arm64/compile/GENERIC.MP                                                         
-real mem  = 4209930240 (4014MB)                                                                                                  
-avail mem = 4003815424 (3818MB)                                                                                                  
-random: good seed from bootblocks                                                                                                
-mainbus0 at root: Pine64 Rock64                                                                                                  
-psci0 at mainbus0: PSCI 1.1, SMCCC 1.2                                                                                           
-cpu0 at mainbus0 mpidr 0: ARM Cortex-A53 r0p4                                                                                    
-cpu0: 32KB 64b/line 2-way L1 VIPT I-cache, 32KB 64b/line 4-way L1 D-cache                                                        
-cpu0: 256KB 64b/line 16-way L2 cache                                                                                             
-cpu1 at mainbus0 mpidr 1: ARM Cortex-A53 r0p4                                                                                    
-cpu1: 32KB 64b/line 2-way L1 VIPT I-cache, 32KB 64b/line 4-way L1 D-cache                                                        
-cpu1: 256KB 64b/line 16-way L2 cache                                                                                             
-cpu2 at mainbus0 mpidr 2: ARM Cortex-A53 r0p4                                                                                    
-cpu2: 32KB 64b/line 2-way L1 VIPT I-cache, 32KB 64b/line 4-way L1 D-cache                                                        
-cpu2: 256KB 64b/line 16-way L2 cache                                                                                             
-cpu3 at mainbus0 mpidr 3: ARM Cortex-A53 r0p4                                                                                    
-cpu3: 32KB 64b/line 2-way L1 VIPT I-cache, 32KB 64b/line 4-way L1 D-cache                                                        
-cpu3: 256KB 64b/line 16-way L2 cache                                                                                             
-efi0 at mainbus0: UEFI 2.8                                                                                                       
-efi0: Das U-Boot rev 0x20210100                                                                                                  
-apm0 at mainbus0                                                                                                                 
-syscon0 at mainbus0: "syscon"                                                                                                    
-"io-domains" at syscon0 not configured                                                                                           
-"grf-gpio" at syscon0 not configured                                                                                             
-"power-controller" at syscon0 not configured                                                                                     
-"reboot-mode" at syscon0 not configured                                                                                          
-rkclock0 at mainbus0                                                                                                             
-syscon1 at mainbus0: "syscon"                                                                                                    
-"usb2-phy" at syscon1 not configured                                                                                             
-ampintc0 at mainbus0 nirq 160, ncpu 4 ipi: 0, 1: "interrupt-controller"                                                          
-rkpinctrl0 at mainbus0: "pinctrl"                                                                                                
-rkgpio0 at rkpinctrl0                                                                                                            
-rkgpio1 at rkpinctrl0                                                                                                            
-rkgpio2 at rkpinctrl0                                                                                                            
-rkgpio3 at rkpinctrl0                                                                                                            
-"opp_table0" at mainbus0 not configured                                                                                          
-simplebus0 at mainbus0: "bus"                                                                                                    
-"dmac" at simplebus0 not configured                                                                                              
-"arm-pmu" at mainbus0 not configured                                                                                             
-rkdrm0 at mainbus0                                                                                                               
-drm0 at rkdrm0                                                                                                                   
-agtimer0 at mainbus0: tick rate 24000 KHz                                                                                        
-"xin24m" at mainbus0 not configured                                                                                              
-"i2s" at mainbus0 not configured                                                                                                 
-"spdif" at mainbus0 not configured                                                                                               
-com0 at mainbus0: ns16550, no working fifo                                                                                       
-com0: console                                                                                                                    
-rkiic0 at mainbus0                                                                                                               
-iic0 at rkiic0                                                                                                                   
-rkpmic0 at iic0 addr 0x18: RK805                                                                                                 
-"spi" at mainbus0 not configured                                                                                                 
-"watchdog" at mainbus0 not configured                                                                                            
-rktemp0 at mainbus0                                                                                                              
-"efuse" at mainbus0 not configured                                                                                               
-"gpu" at mainbus0 not configured                                                                                                 
-"video-codec" at mainbus0 not configured                                                                                         
-"iommu" at mainbus0 not configured                                                                                               
-"vop" at mainbus0 not configured                                                                                                 
-"iommu" at mainbus0 not configured                                                                                               
-"hdmi" at mainbus0 not configured                                                                                                
-"codec" at mainbus0 not configured                                                                                               
-"phy" at mainbus0 not configured                                                                                                 
-dwmmc0 at mainbus0: 50 MHz base clock                                                                                            
-sdmmc0 at dwmmc0: 4-bit, sd high-speed, mmc high-speed, dma                                                                      
-dwmmc1 at mainbus0: 50 MHz base clock                                                                                            
-sdmmc1 at dwmmc1: 8-bit, mmc high-speed, dma                                                                                     
-dwge0 at mainbus0: address 4e:41:b0:27:d6:24                                                                                     
-rgephy0 at dwge0 phy 0: RTL8169S/8110S/8211 PHY, rev. 6                                                                          
+rock64# dmesg
+OpenBSD 6.8 (GENERIC.MP) #828: Sun Oct  4 20:35:47 MDT 2020
+    deraadt@arm64.openbsd.org:/usr/src/sys/arch/arm64/compile/GENERIC.MP
+real mem  = 4209930240 (4014MB)
+avail mem = 4003815424 (3818MB)
+random: good seed from bootblocks
+mainbus0 at root: Pine64 Rock64
+psci0 at mainbus0: PSCI 1.1, SMCCC 1.2
+cpu0 at mainbus0 mpidr 0: ARM Cortex-A53 r0p4
+cpu0: 32KB 64b/line 2-way L1 VIPT I-cache, 32KB 64b/line 4-way L1 D-cache
+cpu0: 256KB 64b/line 16-way L2 cache
+cpu1 at mainbus0 mpidr 1: ARM Cortex-A53 r0p4
+cpu1: 32KB 64b/line 2-way L1 VIPT I-cache, 32KB 64b/line 4-way L1 D-cache
+cpu1: 256KB 64b/line 16-way L2 cache
+cpu2 at mainbus0 mpidr 2: ARM Cortex-A53 r0p4
+cpu2: 32KB 64b/line 2-way L1 VIPT I-cache, 32KB 64b/line 4-way L1 D-cache
+cpu2: 256KB 64b/line 16-way L2 cache
+cpu3 at mainbus0 mpidr 3: ARM Cortex-A53 r0p4
+cpu3: 32KB 64b/line 2-way L1 VIPT I-cache, 32KB 64b/line 4-way L1 D-cache
+cpu3: 256KB 64b/line 16-way L2 cache
+efi0 at mainbus0: UEFI 2.8
+efi0: Das U-Boot rev 0x20210100
+apm0 at mainbus0
+syscon0 at mainbus0: "syscon"
+"io-domains" at syscon0 not configured
+"grf-gpio" at syscon0 not configured
+"power-controller" at syscon0 not configured
+"reboot-mode" at syscon0 not configured
+rkclock0 at mainbus0
+syscon1 at mainbus0: "syscon"
+"usb2-phy" at syscon1 not configured
+ampintc0 at mainbus0 nirq 160, ncpu 4 ipi: 0, 1: "interrupt-controller"
+rkpinctrl0 at mainbus0: "pinctrl"
+rkgpio0 at rkpinctrl0
+rkgpio1 at rkpinctrl0
+rkgpio2 at rkpinctrl0
+rkgpio3 at rkpinctrl0
+"opp_table0" at mainbus0 not configured
+simplebus0 at mainbus0: "bus"
+"dmac" at simplebus0 not configured
+"arm-pmu" at mainbus0 not configured
+rkdrm0 at mainbus0
+drm0 at rkdrm0
+agtimer0 at mainbus0: tick rate 24000 KHz
+"xin24m" at mainbus0 not configured
+"i2s" at mainbus0 not configured
+"spdif" at mainbus0 not configured
+com0 at mainbus0: ns16550, no working fifo
+com0: console
+rkiic0 at mainbus0
+iic0 at rkiic0
+rkpmic0 at iic0 addr 0x18: RK805
+"spi" at mainbus0 not configured
+"watchdog" at mainbus0 not configured
+rktemp0 at mainbus0
+"efuse" at mainbus0 not configured
+"gpu" at mainbus0 not configured
+"video-codec" at mainbus0 not configured
+"iommu" at mainbus0 not configured
+"vop" at mainbus0 not configured
+"iommu" at mainbus0 not configured
+"hdmi" at mainbus0 not configured
+"codec" at mainbus0 not configured
+"phy" at mainbus0 not configured
+dwmmc0 at mainbus0: 50 MHz base clock
+sdmmc0 at dwmmc0: 4-bit, sd high-speed, mmc high-speed, dma
+dwmmc1 at mainbus0: 50 MHz base clock
+sdmmc1 at dwmmc1: 8-bit, mmc high-speed, dma
+dwge0 at mainbus0: address 4e:41:b0:27:d6:24
+rgephy0 at dwge0 phy 0: RTL8169S/8110S/8211 PHY, rev. 6
 ehci0 at mainbus0
 usb0 at ehci0: USB revision 2.0
 uhub0 at usb0 configuration 1 interface 0 "Generic EHCI root hub" rev 2.00/1.00 addr 1

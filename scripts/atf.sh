@@ -5,16 +5,16 @@
 # Project  : rock64_openbsd
 # Author   : Copyright (C) 2021 Johannes Krottmayer <krjdev@gmail.com>
 # Created  : 2021-02-02
-# Modified : 
+# Modified : 2021-02-03
 # Revised  : 
-# Version  : 0.1.0.0
+# Version  : 0.1.1.0
 # License  : CC-BY (see file LICENSE.md)
 #
 # NOTE: This code is currently below version 1.0, and therefore is considered
 # to be lacking in some functionality or documentation, or may not be fully
 # tested. Nonetheless, you can expect most functions to work.
 
-SCRIPT_VERSION="0.1.0.0"
+SCRIPT_VERSION="0.1.1.0"
 GCC_AARCH64="aarch64-none-elf"
 ATF_GIT="https://github.com/ARM-software/arm-trusted-firmware.git"
 ATF_DIR="arm-trusted-firmware"
@@ -101,6 +101,14 @@ build_atf()
     git checkout $_ATF_VERSION
     make distclean
     make CROSS_COMPILE=$PWD/../$GCC_AARCH64/bin/aarch64-none-elf- PLAT=$ATF_ROCK64_CONFIG
+    
+    if [ ! -f "build/$ATF_ROCK64_CONFIG/release/bl31/$ATF_BL31" ]
+    then
+        echo "Error: Build failed for ARM-Trusted-Firmware."
+        env_cleanup
+        exit 1
+    fi
+    
     cp "build/$ATF_ROCK64_CONFIG/release/bl31/$ATF_BL31" ../$ATF_BL31
     cd ..
     export BL31="$PWD/$ATF_BL31"

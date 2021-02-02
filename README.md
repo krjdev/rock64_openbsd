@@ -263,7 +263,9 @@ rock64#
 HDMI output currently not working.
 
 ### USB
-Only one USB port is working (Step 7) with OpenBSD.
+Only one USB port is currently working (Step 7) with OpenBSD:
+
+![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-usb.png)
 
 ## Credits:
 

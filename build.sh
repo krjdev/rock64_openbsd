@@ -19,6 +19,14 @@ SCRIPT_TOOLCHAIN="./scripts/toolchain.sh"
 SCRIPT_ATF="./scripts/atf.sh"
 SCRIPT_UBOOT="./scripts/u-boot.sh"
 
+# Output targets
+ATF_BL31="bl31.elf"
+UBOOT_ROCK64_IDBLOADER="idbloader.img"
+UBOOT_ROCK64_ITB="u-boot.itb"
+UBOOT_ROCK64_DTB="rk3328-rock64.dtb"
+UBOOT_SCRIPT_BIN="boot.scr"
+
+
 # Cleanup 
 env_cleanup()
 {
@@ -26,6 +34,11 @@ env_cleanup()
     unset SCRIPT_TOOLCHAIN
     unset SCRIPT_ATF
     unset SCRIPT_UBOOT
+    unset ATF_BL31
+    unset UBOOT_ROCK64_IDBLOADER
+    unset UBOOT_ROCK64_ITB
+    unset UBOOT_ROCK64_DTB
+    unset UBOOT_SCRIPT_BIN
 }
 
 show_usage()

@@ -1,0 +1,4 @@
+echo 'Enable USB power supply for OpenBSD'
+setenv reg_gpio0_dr 0xff210000
+setenv reg_gpio0_val 0x00000000
+mw ${reg_gpio0_dr} ${reg_gpio0_val} 1;

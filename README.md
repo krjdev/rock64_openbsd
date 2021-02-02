@@ -29,7 +29,7 @@ You can skip **step 1** to **step 2**, if you want to use my build scripts (init
 ![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-u-boot_v2021.01.png)
 
 
-To build U-Boot with my scripts:
+To build U-Boot with my scripts:<img align="right" src="https://www.travis-ci.com/krjdev/rock64_openbsd.svg?branch=master">
 
 ```
 $ git clone https://github.com/krjdev/rock64_openbsd.git

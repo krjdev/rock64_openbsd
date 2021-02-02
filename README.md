@@ -14,7 +14,7 @@
 
 * UART Terminal (in this tutorial I use minicom)
 * GCC cross compiler for ARM64 (AArch64)  
-[Offical Toolchains from ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads)  
+[Download: Toolchains from ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads)  
 * Device Tree Compiler (required to build U-Boot)
 * Image *miniroot68.img* for ARM64 from the offical OpenBSD FTP mirrors  
 [Download: Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)
@@ -125,7 +125,7 @@ $ cp path/to/u-boot/arch/arm/dts/rk3328-rock64.dtb rockchip
 ```
 $ cd ..
 ```
-* Copy boot.scr in this directory
+* Copy **boot.scr** in this directory
 ```
 $ cp path/to/u-boot/boot.scr ./
 ```

@@ -13,6 +13,13 @@ arm-trusted-firmware
 # U-Boot sources
 u-boot
 
+# Binaries
+bl31.elf
+boot.scr
+idbloader.img
+rk3328-rock64.dtb
+u-boot.itb
+
 # TODO
 TODO
 

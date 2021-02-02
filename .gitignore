@@ -1,8 +1,11 @@
-*.so
-*.so*
-*.o
+# Editor backup files
 *~
 *.*.swp
 *.*.kate-swp
 .directory
+
+# TODO
+TODO
+
+# GIT commit template
 GIT_COMMIT.txt

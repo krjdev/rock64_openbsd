@@ -31,7 +31,7 @@ $ sudo apt-get install swig
 [Download](https://github.com/krjdev/rock64_openbsd/blob/master/scripts/u-boot_usb.script)  
 
 *NOTE*  
-You can skip **step 1** to **step 2**, if you want to use my build scripts (initial version) for downloading the required toolchains, build ATF, build U-Boot and generate my U-Boot script for enabling the USB-port, or you can use my prebuilt binaries:
+You can skip [step 1](https://github.com/krjdev/rock64_openbsd#step-1---build-atf-arm-trusted-firmware) and  [step 2](https://github.com/krjdev/rock64_openbsd#step-2---build-u-boot), if you want to use my build scripts (initial version) for downloading the required toolchains, build ATF, build U-Boot and generate my U-Boot script for enabling the USB-port, or you can use my prebuilt binaries. If you choose these both ways you can begin at [step 3](https://github.com/krjdev/rock64_openbsd#step-3---install-miniroot68img-on-microsd-card).  
 
 [Rock64 (U-Boot v2021.01)](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rock64/U-Boot_v2021.01)  
 
@@ -307,7 +307,7 @@ rock64#
 HDMI output currently not working.
 
 ### USB
-Only one USB port is currently working (Step 7) with OpenBSD:
+Only one USB port is currently working [(step 7)](https://github.com/krjdev/rock64_openbsd#step-7---enable-usb-port-for-openbsd) with OpenBSD:
 
 ![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-usb.png)
 

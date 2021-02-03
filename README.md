@@ -15,7 +15,16 @@
 * UART Terminal (in this tutorial I use minicom)
 * GCC cross compiler for ARM64 (AArch64)  
 [Download: Toolchains from ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads)  
-* Device Tree Compiler (required to build U-Boot)
+* Device Tree Compiler (required to build U-Boot)  
+Get the software on Ubuntu:  
+```
+$ sudo apt-get install device-tree-compiler
+```
+* SWIG (required to build U-Boot)  
+Get the software on Ubuntu:  
+```
+$ sudo apt-get install swig
+```
 * Image *miniroot68.img* for ARM64 from the offical OpenBSD FTP mirrors  
 [Download: Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)  
 * U-Boot script for enabling one of the USB ports  

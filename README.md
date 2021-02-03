@@ -94,7 +94,6 @@ $ make CROSS_COMPILE=/path/to/gcc/bin/aarch64-none-elf-
 ```
 * Compile U-Boot boot script (required for step 7)
 ```
-$ git clone https://github.com/krjdev/rock64_openbsd.git
 $ ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "Script: Enable USB power supply for OpenBSD" -d /path/to/u-boot_usb.script boot.scr
 ```
 
@@ -105,18 +104,18 @@ $ ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "Script: Enable USB po
 * Copy *miniroot68.img* to microSD
 
 ```
-$ dd if=/path/to/miniroot68.img of=/dev/sdx bs=1M
+$ sudo dd if=/path/to/miniroot68.img of=/dev/sdx bs=1M
 ```
 
 ### Step 4 - Place *idbloader.img* and *u-boot.itb* on microSD card
 
 * Place *idbloader.img* on microSD card
 ```
-$ dd if=/path/to/idbloader.img of=/dev/sdx bs=512 seek=64 conv=sync
+$ sudo dd if=/path/to/idbloader.img of=/dev/sdx bs=512 seek=64 conv=sync
 ```
 * Place *u-boot.itb* on microSD card
 ```
-$ dd if=/path/to/u-boot.itb of=/dev/sdx bs=512 seek=16384 conv=sync
+$ sudo dd if=/path/to/u-boot.itb of=/dev/sdx bs=512 seek=16384 conv=sync
 ```
 
 ### Step 5 - Install OpenBSD
@@ -143,16 +142,16 @@ minicom -8 -D /dev/ttyUSB0 -b 1500000
 * Put the microSD card in your PC
 * Mount the FAT partition  
 ```
-$ mount -t vfat /dev/sdx1 /mnt
+$ sudo mount -t vfat /dev/sdx1 /mnt
 ```
 * Create a directory with the name rockchip  
 ```
 $ cd /mnt
-$ mkdir rockchip
+$ sudo mkdir rockchip
 ```
 * Place the dtb file in this directory  
 ```
-$ cp path/to/u-boot/arch/arm/dts/rk3328-rock64.dtb rockchip
+$ sudo cp path/to/u-boot/arch/arm/dts/rk3328-rock64.dtb rockchip
 ```
 
 ### Step 7 - Enable USB port for OpenBSD
@@ -163,12 +162,12 @@ $ cd ..
 ```
 * Copy **boot.scr** in this directory
 ```
-$ cp path/to/u-boot/boot.scr ./
+$ sudo cp path/to/u-boot/boot.scr ./
 ```
 * Umount microSD card
 ```
 $ cd /
-$ umount /mnt
+$ sudo umount /mnt
 ```
 * Remove microSD card from your PC.
 

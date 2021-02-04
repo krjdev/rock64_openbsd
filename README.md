@@ -21,16 +21,30 @@ Use **3.3V** logic level only, to avoid damages of the board
 
 **Required software**
 
-* UART Terminal (in this tutorial I use minicom)
+* UART Terminal (in this tutorial I use minicom)  
+* GCC for the host system (required for U-Boot)  
 * GCC cross compiler for ARM64 (AArch64)  
 [Download: Toolchains from ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads)  
+  
+**NOTE**  
+  
+In this tutorial I use GCC for AArch64 ELF bare-metal targets (aarch64-none-elf).  
+  
 * Device Tree Compiler (required to build U-Boot)  
-Get the software on Ubuntu:  
+On openSUSE:  
+```
+$ sudo zypper install dtc
+```  
+On Ubuntu:  
 ```
 $ sudo apt-get install device-tree-compiler
 ```
 * SWIG (required to build U-Boot)  
-Get the software on Ubuntu:  
+On openSUSE:  
+```
+$ sudo zypper install swig
+```  
+On Ubuntu:  
 ```
 $ sudo apt-get install swig
 ```
@@ -39,7 +53,8 @@ $ sudo apt-get install swig
 * U-Boot script for enabling one of the USB ports  
 [Download](https://github.com/krjdev/rock64_openbsd/blob/master/scripts/u-boot_usb.script)  
 
-*NOTE*  
+### Step 0 - Preamble
+
 You can skip [step 1](https://github.com/krjdev/rock64_openbsd#step-1---build-atf-arm-trusted-firmware) and  [step 2](https://github.com/krjdev/rock64_openbsd#step-2---build-u-boot), if you want to use my build scripts (initial version) for downloading the required toolchains, build ATF, build U-Boot and generate my U-Boot script for enabling the USB-port, or you can use my prebuilt binaries. If you choose these both ways you can begin at [step 3](https://github.com/krjdev/rock64_openbsd#step-3---install-miniroot68img-on-microsd-card).  
 
 [Rock64 (U-Boot v2021.01)](https://github.com/krjdev/rock64_openbsd/blob/master/bin/rock64/U-Boot_v2021.01)  

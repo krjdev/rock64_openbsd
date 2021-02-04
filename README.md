@@ -113,7 +113,7 @@ $ export BL31=/path/to/arm-trusted-firmware/build/rk3328/release/bl31/bl31.elf
 ```
 
 **NOTE**  
-The previous steps (build ATF) are required to successfully boot OpenBSD. Without these steps, U-Boot will boot but cannot load OpenBSD.
+The previous steps (build [ATF](https://github.com/krjdev/rock64_openbsd#step-1---build-atf-arm-trusted-firmware)) are required to successfully boot OpenBSD. Without these steps, U-Boot will boot but cannot load OpenBSD.
 
 ### Step 2 - Build U-Boot
 * Checkout U-Boot sources  
@@ -127,7 +127,7 @@ $ make mrproper
 $ make rock64-rk3328_defconfig
 $ make CROSS_COMPILE=/path/to/gcc/bin/aarch64-none-elf-
 ```
-* Compile U-Boot boot script (required for [(step 7)](https://github.com/krjdev/rock64_openbsd#step-7---enable-usb-port-for-openbsd))
+* Compile U-Boot boot script (required for [step 7](https://github.com/krjdev/rock64_openbsd#step-7---enable-usb-port-for-openbsd))
 ```
 $ ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "Enable one USB-port" -d /path/to/u-boot_usb.script boot.scr
 ```
@@ -136,7 +136,7 @@ $ ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "Enable one USB-port" 
 
 * Put the microSD card in your PC
 * Open the terminal on your PC
-* Copy *miniroot68.img* to microSD
+* Copy **miniroot68.img** to microSD
 
 ```
 $ sudo dd if=/path/to/miniroot68.img of=/dev/sdx bs=1M
@@ -144,11 +144,11 @@ $ sudo dd if=/path/to/miniroot68.img of=/dev/sdx bs=1M
 
 ### Step 4 - Place *idbloader.img* and *u-boot.itb* on microSD card
 
-* Place *idbloader.img* on microSD card
+* Place **idbloader.img** on microSD card
 ```
 $ sudo dd if=/path/to/idbloader.img of=/dev/sdx bs=512 seek=64 conv=sync
 ```
-* Place *u-boot.itb* on microSD card
+* Place **u-boot.itb** on microSD card
 ```
 $ sudo dd if=/path/to/u-boot.itb of=/dev/sdx bs=512 seek=16384 conv=sync
 ```

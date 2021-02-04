@@ -28,23 +28,25 @@ Use **3.3V** logic level only, to avoid damages of the board
   
 **NOTE**  
   
-In this tutorial I use GCC for AArch64 ELF bare-metal targets (aarch64-none-elf).  
+In this tutorial I use GCC for AArch64 ELF bare-metal targets (*aarch64-none-elf*).  
   
 * Device Tree Compiler (required to build U-Boot)  
-On openSUSE:  
+  
+On *openSUSE*:  
 ```
 $ sudo zypper install dtc
 ```  
-On Ubuntu:  
+On *Ubuntu*:  
 ```
 $ sudo apt-get install device-tree-compiler
 ```
 * SWIG (required to build U-Boot)  
-On openSUSE:  
+  
+On *openSUSE*:  
 ```
 $ sudo zypper install swig
 ```  
-On Ubuntu:  
+On *Ubuntu*:  
 ```
 $ sudo apt-get install swig
 ```

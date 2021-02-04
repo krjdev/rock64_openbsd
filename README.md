@@ -5,7 +5,9 @@
 * PC with Linux (in this tutorial) or OpenBSD installed
 * PINE64 ROCK64 media board (In this tutorial I use version 2.0 of the board)
 * USB-UART-TTL converter  
-**ATTENTION:**  
+  
+**ATTENTION**  
+  
 Use **3.3V** logic level only, to avoid damages of the board
 
 ![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-serial.png)

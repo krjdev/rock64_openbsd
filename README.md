@@ -112,7 +112,7 @@ $ make CROSS_COMPILE=/path/to/gcc/bin/aarch64-none-elf- PLAT=rk3328
 $ export BL31=/path/to/arm-trusted-firmware/build/rk3328/release/bl31/bl31.elf
 ```
 
-*NOTE*  
+**NOTE**  
 The previous steps (build ATF) are required to successfully boot OpenBSD. Without these steps, U-Boot will boot but cannot load OpenBSD.
 
 ### Step 2 - Build U-Boot
@@ -127,9 +127,9 @@ $ make mrproper
 $ make rock64-rk3328_defconfig
 $ make CROSS_COMPILE=/path/to/gcc/bin/aarch64-none-elf-
 ```
-* Compile U-Boot boot script (required for step 7)
+* Compile U-Boot boot script (required for [(step 7)](https://github.com/krjdev/rock64_openbsd#step-7---enable-usb-port-for-openbsd))
 ```
-$ ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "Script: Enable USB power supply for OpenBSD" -d /path/to/u-boot_usb.script boot.scr
+$ ./tools/mkimage -A arm64 -a 0 -e 0 -T script -C none -n "Enable one USB-port" -d /path/to/u-boot_usb.script boot.scr
 ```
 
 ### Step 3 - Install *miniroot68.img* on microSD card
@@ -156,7 +156,7 @@ $ sudo dd if=/path/to/u-boot.itb of=/dev/sdx bs=512 seek=16384 conv=sync
 ### Step 5 - Install OpenBSD
 
 * Put microSD card in the ROCK64
-* Start minicom with the baud rate 1500000
+* Start minicom with the baud rate **1500000**
 ```
 minicom -8 -D /dev/ttyUSB0 -b 1500000
 ```
@@ -337,9 +337,13 @@ Only one USB port is currently working [(step 7)](https://github.com/krjdev/rock
 
 ![alt text](https://github.com/krjdev/rock64_openbsd/blob/master/img/rock64-usb.png)
 
+**NOTE**  
+  
+See [issue #5](https://github.com/krjdev/rock64_openbsd/issues/5) for additional information.
+
 ## Credits
 
-Thanks to all people from U-Boot and the OpenBSD project.
+Thanks to all people from [U-Boot](http://www.denx.de/wiki/U-Boot/WebHome) and the [OpenBSD project](https://www.openbsd.org/).
 
 ## License
  <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/krjdev/rock64_openbsd">TUTORIAL: Install OpenBSD on a PINE64 ROCK64 media board</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/krjdev">Johannes Krottmayer</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<br><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>

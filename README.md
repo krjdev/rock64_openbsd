@@ -80,11 +80,11 @@ This file is the ARM-Trusted-Firmware. It is embedded in the U-Boot binaries. No
 
 * **boot.scr**  
 
-This file ist the U-Boot script binary for enabling one of the USB ports. It's an inital release. Might change on further releases on this tutorial. The reason is, OpenBSD currently doesn't power-on the USB-ports. This script is a workaround as soon as the OpenBSD developers fix this isssue.  
+This file ist the U-Boot script binary for enabling one of the USB ports. It's an inital release. Might change on further releases on this tutorial. The reason is, OpenBSD currently doesn't power-on the USB-ports. This script is a workaround as soon as the OpenBSD developers fix this issue.  
 
 * **idbloader.img**  
 
-This is the second stage bootloader. The first stage bootloader is proprietary and resides in the embedded Flash in the used SoC (Rockchip RK3328).  
+This is the second stage bootloader. The first stage bootloader is proprietary and resides in the embedded Flash in the used SoC [(Rockchip RK3328)](http://opensource.rock-chips.com/wiki_RK3328).  
 
 * **rk3328-rock64.dtb**  
 

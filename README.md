@@ -50,8 +50,8 @@ On *Ubuntu*:
 ```
 $ sudo apt-get install swig
 ```
-* Image *miniroot68.img* for ARM64 from the offical OpenBSD FTP mirrors  
-[Download: Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)  
+* Image **miniroot68.img** for ARM64 from the offical [OpenBSD FTP mirrors](https://www.openbsd.org/ftp.html)  
+[Download: Mirror Fastly (CDN)](https://cdn.openbsd.org/pub/OpenBSD/6.8/arm64/miniroot68.img)  
 * U-Boot script for enabling one of the USB ports  
 [Download](https://github.com/krjdev/rock64_openbsd/blob/master/scripts/u-boot_usb.script)  
 

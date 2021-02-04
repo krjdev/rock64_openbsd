@@ -2,8 +2,8 @@
 
 **Required hardware**
 
+* [PINE64 ROCK64 media board](https://www.pine64.org/devices/single-board-computers/rock64) (In this tutorial I use version **2.0** of the board)
 * PC with Linux (in this tutorial) or OpenBSD installed
-* PINE64 ROCK64 media board (In this tutorial I use version 2.0 of the board)
 * USB-UART-TTL converter  
   
 **ATTENTION**  

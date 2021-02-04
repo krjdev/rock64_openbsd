@@ -3,7 +3,12 @@
 **Required hardware**
 
 * [PINE64 ROCK64 media board](https://www.pine64.org/devices/single-board-computers/rock64) (In this tutorial I use version **2.0** of the board)
-* PC with Linux (in this tutorial) or OpenBSD installed
+* PC with a Linux distribution or OpenBSD  
+  
+**NOTE**  
+  
+In this tutorial I use the Linux distribution [openSUSE Leap 15.2](https://software.opensuse.org/distributions/leap). The additional BASH scripts (if you use them) for downloading the toolchains (GCC for AArch64), build ARM-Trusted-Firmware and U-Boot use default Linux commands. There are also some required software which is needed for a successfull build of U-Boot.  
+
 * USB-UART-TTL converter  
   
 **ATTENTION**  

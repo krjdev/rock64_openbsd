@@ -25,3 +25,6 @@ TODO
 
 # GIT commit template
 GIT_COMMIT.txt
+
+# GIT tag template
+GIT_TAG.txt

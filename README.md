@@ -80,7 +80,7 @@ This file is the ARM-Trusted-Firmware. It is embedded in the U-Boot binaries. No
 
 * **boot.scr**  
 
-This file ist the U-Boot script binary for enabling one of the USB ports. It's an inital release. Might change on further releases on this tutorial. The reason is, OpenBSD currently doesn't power-on the USB-ports. This script is a workaround as soon as the OpenBSD developers fix this issue.  
+This file ist the U-Boot script binary for enabling one of the USB ports. It's an inital release. Might change on further releases of this tutorial. The reason is, OpenBSD currently doesn't power-on the USB-ports. This script is a workaround as soon as the OpenBSD developers fix this issue.  
 
 * **idbloader.img**  
 
@@ -104,6 +104,7 @@ $ cd arm-trusted-firmware
 ```
 * Build ATF (BL31)  
 ```
+$ git checkout v2.4
 $ make distclean
 $ make CROSS_COMPILE=/path/to/gcc/bin/aarch64-none-elf- PLAT=rk3328
 ```
@@ -123,6 +124,7 @@ $ cd u-boot
 ```
 * Build U-Boot  
 ```
+$ git checkout v2021.01
 $ make mrproper
 $ make rock64-rk3328_defconfig
 $ make CROSS_COMPILE=/path/to/gcc/bin/aarch64-none-elf-
@@ -179,7 +181,7 @@ minicom -8 -D /dev/ttyUSB0 -b 1500000
 ```
 $ sudo mount -t vfat /dev/sdx1 /mnt
 ```
-* Create a directory with the name rockchip  
+* Create a directory with the name **rockchip**  
 ```
 $ cd /mnt
 $ sudo mkdir rockchip
